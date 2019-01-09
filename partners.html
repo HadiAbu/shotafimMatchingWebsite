@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <title>Shotafim</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1 user-scalable=no">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Playfair+Display:400,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=David+Libre|Arimo|Rubik|Bellefair|M+PLUS+1p|M+PLUS+Rounded+1c|Miriam" rel="stylesheet">  <!-- Firebase -->
+
+  <!-- Firebase -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+
+
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div class="main" style="margin-top: 20px;">
+        <div class="container">
+            <h1 style="color:#525252; font-family: Arimo; font-size: 50px">שותפים</h1>
+            <div><p>פרטים אלה 
+                 <span style="color:rgb(99, 216, 161)">לא יפורסמו </span>
+                בפורום ציבורי/לוח מודעות</p>
+            </div>
+            
+            <div class="row">
+                <div class="alert alert-secondary" style=" ">
+                    <form style="margin-top:10px">
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5">
+                                <input id="lastnameID" class="form-control greySolidBorder marked" type="text" placeholder="שם משפחה"/>
+                            </div>
+                            <div class="form-group col-sm-5">
+                                <input id="firstnameID" class="form-control greySolidBorder marked" type="text" placeholder="שם פרטי"/>
+                            </div>
+                            
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5">
+                                <input id="phoneID" class="form-control greySolidBorder marked" type="text" placeholder="מספר פלאפון"/>
+                            </div>
+                            <div class="form-group col-sm-5">
+                                <input id="mailID" class="form-control greySolidBorder marked" type="text" placeholder="דואר אלקטרוני"/>
+                            </div>
+                           
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5">
+                                <select id="livingPrefID" class="form-control " dir="rtl">
+                                    <option selected>נא לבחור</option>
+                                    <option>חשוב לי לגור עם בני מגדרי המיני</option>
+                                    <option>לא חשוב לי לגור עם בני מגדרי המיני</option>
+                                    </select>
+                            </div>
+                            <div class="form-group col-sm-5" >
+                                <select id="sexID" class="form-control " dir="rtl" >
+                                    <option selected >מין</option>
+                                    <option>בחור</option>
+                                    <option>בחורה</option>
+                                    <option>לא משנה</option>
+                                    </select>
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5" >
+                                <select id="familyStatusID" class="form-control" dir="rtl">
+                                    <option selected >מצב משפחתי</option>
+                                    <option>רווק/ה</option>
+                                    <option>במערכת יחסים</option>
+                                    <option>נשוי/אה</option>
+                                    <option>אלמו/נה</option>
+                                    <option>גרוש/ה</option>
+                                    </select>
+                            </div>
+                            <div class="form-group col-sm-5">
+                                <select id="hometownID" class="form-control " dir="rtl">
+                                    <option selected>מאיפה אתם</option>
+                                    <option>מחוז הצפון וחיפה</option>
+                                    <option>מחוז המרכז ות"א</option>
+                                    <option>מחוז ירושלים</option>
+                                    <option>מחוז הדרום</option>
+                                    </select>
+                            </div>
+                           
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5" ></div>
+                            <div class="form-group col-sm-5" >
+                                <select id="ageID" class="form-control" dir="rtl">
+                                    <option selected >גיל</option>
+                                    <option>18-23</option>
+                                    <option>23-28</option>
+                                    <option>28-34</option>
+                                    <option>35-44</option>
+                                    <option>45-54</option>
+                                    <option>55+</option>
+                                    
+                                    </select>
+                            </div>
+                            
+                           
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5">
+                                <select id="religionStatusID" class="form-control " dir="rtl">
+                                    <option selected >סטטוס דתי (לצורך מיון)</option>
+                                    <option >שומר מצוות</option>
+                                    <option >מסורתי</option>
+                                    <option >חילוני</option>
+                                    <option >לא משנה</option>
+                                    
+                                    </select>
+                            </div>
+                            <div class="form-group col-sm-5" >
+                                <select id="religionID" class="form-control" dir="rtl">
+                                    <option selected >   דת (לצורך מיון)</option>
+                                    <option>יהדות</option>
+                                    <option>דרוז</option>
+                                    <option>נצרות</option>
+                                    <option>איסלם</option>
+                                    <option>אחר</option>
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-2" >
+                                <!-- <label class="form-check-label" for="exampleCheck1" style="color:black">חיות מחמד</label>
+                                <input id="petId" type="checkbox" class="form-check-input" /> -->
+                                <label class="container2" style="color:black">חיות מחמד
+                                        <input type="checkbox" id="petId">
+                                        <span class="checkmark"  style="border: 1px solid grey"></span>
+                                      </label>
+                            </div>
+                            <div class="form-group col-sm-5" >
+                                <!-- <label class="form-check-label" for="exampleCheck1" style="color:black">אני לא מסוגל/ת לגור עם מעשנים</label>
+                                <input id="notAbleToLiveWithSmokersID" type="checkbox" class="form-check-input" /> -->
+                                <label class="container2" style="color:black">אני לא מסוגל/ת לגור עם מעשנים
+                                        <input type="checkbox" id="notAbleToLiveWithSmokersID">
+                                        <span class="checkmark"  style="border: 1px solid grey"></span>
+                                      </label>
+                            </div>
+                            <div class="form-group col-sm-2" >
+                                <!-- <label class="form-check-label" for="exampleCheck1" style="color:black" >אני מעשן/נת</label>
+                                <input id="smokerID" type="checkbox" class="form-check-input" /> -->
+                                <label class="container2" style="color:black">אני מעשן/נת
+                                        <input type="checkbox" id="smokerID">
+                                        <span class="checkmark"  style="border: 1px solid grey"></span>
+                                      </label>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row alert-success" style="padding: 20px;background-color: #69E7C8; width:110%; margin-left:-5%">  
+                    <div class='col-sm-6' style=""> 
+                        <textarea id="occupationFreeTextId" cols="34" rows="2"
+                        placeholder="ספרו לנו על חייכם ב 10 מילים" style="margin-top: 10px;"></textarea>
+                    </div>
+                    <div class='col-sm-6' style="">      
+                        <h3 style="font-size: 27px; font-weight:150;">?מה אתם עושים בחיים</h3>
+                        <select id="whatsMyPurposeID" class="form-control" dir="rtl">
+                                <option selected >  נא לבחור</option>
+                                <option >סטודנט/ית</option>
+                                <option >עובד/ת</option>
+                                <option >עובד/ת מהבית</option>
+                                <option >unemployed</option>
+                                </select>
+                    </div>
+            </div>
+            <p></p>
+            <div class="row alert-secondary" style="">  
+                <div class='col-sm-5' style="margin-top:33px">
+                        <div class="form-group col-sm-12" >
+                                <select id="firstPrefID" class="form-control" dir="rtl">
+                                    <option selected >  עדיפות ראשונה</option>
+                                    <option >שומר מצוות</option>
+                                    <option >מסורתי</option>
+                                    <option >חילוני</option>
+                                    <option >לא משנה</option>
+                                    </select>
+                            </div>
+                            <div class="form-group col-sm-12" >
+                                    <select id="secondPrefrID" class="form-control" dir="rtl">
+                                        <option selected > עדיפות שנייה</option>
+                                        <option >שומר מצוות</option>
+                                        <option >מסורתי</option>
+                                        <option >חילוני</option>
+                                        <option >לא משנה</option>
+                                        </select>
+                                </div>
+                </div>
+                <div class='col-sm-3'  style="margin-top:13px"><h3 style="font-size: 50px; font-weight:150;">עדיפות מגורים</h3></div>
+                <div class='col-sm-4'>
+                    <img style="height: 160px" src="./assets/Roommates registration/no background.png" alt=""/>
+                </div>
+                
+            </div><p></p>
+            <div class="row alert alert-danger" style="width: 80%; margin-left:10%; background-color: #ff8f8f">
+                <div class='col-sm-5' style="">
+                        <select id="budgetID" class="form-control" dir="rtl">
+                                <option selected > תקציב</option>
+                                <option >פחות מ-1500</option>
+                                <option>1500-1800</option>
+                                <option>1800-2100</option>
+                                <option>2100-2400</option>
+                                <option>2400-2700</option>
+                                <option>2700-3000</option>
+                                <option>+3000</option>
+                     
+                                </select>
+                </div>
+                <div class='col-sm-5' style="">
+                        <h3 style="font-size: 24px; font-weight:150; color:white">לא נעים לנו לשאול</h3>
+                </div>
+            </div>
+
+
+            <div  class="row alert alert-secondary">
+                    <div style="text-align:right">
+                        <label class="form-check-label" for="exampleCheck1" style="color:black" >נרשם עם חבר/ה</label>
+                        <input id="withFriendId" type="checkbox" class="form-check-input" /><p></p>
+                        <!-- <label class="container2" style="color:black">נרשם עם חבר/ה
+                                <input type="checkbox" id="withFriendId" >
+                                <span class="checkmark"  style="border: 1px solid grey; "></span>
+                              </label> -->
+                        <!-- <p></p> -->
+                    </div>
+                    <div class="col-sm-5" style="">
+                            <input id="friendLastNameId" class="form-control greySolidBorder marked" type="text" placeholder="שם משפחה של חבר/ה"/>
+                    </div>
+                    <div class="col-sm-5" style="">
+                            <input id="friendnameId" class="form-control greySolidBorder marked" type="text" placeholder="שם פרטי של חבר/ה"/>
+                            <p></p>
+                            <input id="friendPhoneId" class="form-control greySolidBorder marked" type="text" placeholder="טלפון של חבר/ה"/>
+
+                    </div>
+            </div>  
+
+           
+            <div class="row">
+                <div class="alert alert-light" style=" "><!-- free text section --> 
+                        <div class="row">
+                            <div class='col-sm-8' >
+        
+                                <textarea id='freeTextId' rows="3" cols="55" style="border: 2px solid grey" placeholder="?פספסנו משהו"></textarea>
+                                
+                            </div>
+                            <div class='col-sm-3' >
+                                    <h2 style="font-weight: 100; color:black">טקסט 
+                                        <span style="font-weight:400">חופשי</span></h2>
+                            </div>
+                        </div>
+                </div>
+            </div>
+         
+
+            <div class="">
+                    <label data-toggle="tooltip" dir='rtl' title="החברה לא תהיה אחראית לכל נזק, הפסד או הוצאה מכל מין וסוג שייגרמו לגולש כלשהו המשתמש בשירות הנל ו/או למי מטעמו, במישרין או בעקיפין, בקשר לשירות ו/או אי דיוק או אי שלמות השירות. בהתאם, לא תהיה לך כל טענה, תביעה או דרישה כלפי החברה בגין שירות כונס הנכסים ו/או כונס הרכב. אין באמור לעיל כדי לגרוע מיתר הוראות תקנון השימוש, בין היתר לעניין העדר או הגבלת אחריות" 
+                      id="termsHoverId" >
+                      <span style="color:black; font-weight:bold">אני מסכים 
+                        <span style="text-decoration: underline">לתנאי שימוש
+                            </span>.
+                        </span>
+                    </label>
+                    <input id="agreementID" type="checkbox" class="" id="exampleCheck1" style="margin-right: 2%"/>
+                  </div>
+            <button id="submitFormID" dir="rtl" type="submit" class="btn btn-dark"
+             style="width:20em; background-color: #525252" onclick="submitForm()">שלח</button>
+                  <p></p>
+            <p style="float:right; font-size: 70%">  הזכויות שמורות 2018</p>
+        </div><!-- CONTAINER  -->
+    </div><!-- MAIN -->
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+    <script src="script.js"></script>
+    <script src="submitApartmentForm.js"></script>
+
+</body>
+</html>

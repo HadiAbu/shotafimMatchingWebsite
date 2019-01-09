@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <title>Shotafim</title>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1 user-scalable=no">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Playfair+Display:400,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=David+Libre|Arimo|Rubik|Bellefair|M+PLUS+1p|M+PLUS+Rounded+1c|Miriam" rel="stylesheet">  <!-- Firebase -->
+
+  <!-- Firebase -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel='stylesheet' type='text/css' href='styles.css'>
+
+
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <h1 style="color:#525252">פרטי הנכס</h1>
+            <div><p>פרטים אלה 
+                 <span style="color:rgb(99, 216, 161)">לא יפורסמו </span>
+                בפורום ציבורי/לוח מודעות</p>
+            </div>
+            
+            <div class="row">
+                <div class="alert alert-secondary" style=" ">
+                    <form style="margin-top:10px">
+                        <div class="form-row" style="margin-left: -3%">
+                            <div class="form-group col-sm-5">
+                                <input id="firstnameID" class="form-control greySolidBorder marked" type="text" placeholder="שם פרטי של המשכיר"/>
+                            </div>
+                            <div class="form-group col-sm-5">
+                                <input id="lastnameID" class="form-control greySolidBorder marked" type="text" placeholder="שם משפחת המשכיר"/>
+                            </div>
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                                <div class="form-group col-sm-5">
+                                    <input id="phoneNumberID" class="form-control greySolidBorder" type="text" placeholder="מספר פלאפון"/>
+                                </div>
+                                <div class="form-group col-sm-5">
+                                    <input id="addressID" class="form-control greySolidBorder" type="text" placeholder="(כתובת הנכס (רחוב ומס' כניסה"/>
+                                </div>
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                                <div class="form-group col-sm-5">
+                                    <input id="townID" class="form-control greySolidBorder" type="text" placeholder="עיר/יישוב"/>
+                                </div>
+                                <div class="form-group col-sm-5">
+                                    <input id="entryDateID" class="form-control greySolidBorder" type="text" placeholder="תאריך כניסה"/>
+                                </div>
+                        </div>
+                        <div class="form-row" style="margin-left: -3%">
+                                <div class="form-group col-sm-5">
+                                    <input id="apartmentSizeID" class="form-control greySolidBorder" type="text" placeholder='גודל במ/"ר'>
+                                </div>
+                                <div class="form-group col-sm-3">
+                                        <select id="floorID" class="form-control greySolidBorder">
+                                        <option selected>קומה</option>
+                                        <option>...</option>
+                                        </select>
+                                </div>
+                                <div class="form-group col-sm-2" >
+                                        <select id="totalFloorsID" class="form-control greySolidBorder">
+                                        <option selected>מתוך</option>
+                                        <option>...</option>
+                                        </select>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row" style="margin-left: -4%">
+                <div class="alert alert-light" >
+                <form>
+                    <div class="form-row" >
+                        <div class="form-group col-sm-5" >
+                                <select id="flexibleID" dir='rtl' class="form-control greySolidBorder">
+                                    <option selected >נא לבחור</option>
+                                    <option>אם הדייר מתאים לי אני מוכן להיות גמיש במחיר</option>
+                                    <option>לא גמיש במחיר</option>
+                                </select>
+                        </div>
+                        <div class="form-group col-sm-5">
+                            <input id="rentID" class="form-control greySolidBorder" type="text" placeholder="שכר דירה"/>
+                        </div>
+                        
+                    </div>
+                    <div class="form-row" >
+                            <div class="form-group col-sm-5">
+                                    <input id="landlordPriceID" class="form-control greySolidBorder" type="text" placeholder="תשלום לוועד הבית"/>
+                                </div>
+                            <div class="form-group col-sm-5">
+                                <input id="ArnonaID" class="form-control greySolidBorder" type="text" placeholder="ארנונה לחודשיים"/>
+                            </div>
+                            
+                    </div>
+                    <div class="form-row" style="margin-left: 4% ">
+                        <div class="form-group col-sm-2">
+                            <input id="bankGuaranteeID" class="form-check-input" type="radio" id="exampleRadios1" value="option1" />
+                            <label class="form-check-label3" for="exampleRadios1">
+                                    ערבות בנקאית 
+                                </label>
+                        </div>
+                        <div class="form-group col-sm-2">
+                                <input id="safetyCheckID" class="form-check-input" type="radio" id="exampleRadios2" value="option1" />
+                                <label class="form-check-label3" for="exampleRadios1">
+                                        צ׳ק ביטחון 
+                                    </label>
+                        </div>
+                        <div class="form-group col-sm-5">
+                                <input id="paymentsID" class="form-control greySolidBorder" type="text" placeholder="מספר תשלומים"/>
+                            </div>
+                    </div>
+                </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" style="background-color: #FF8F8F; display: flex">
+                    
+
+                       <div style="width: 12em; margin-top: 5%; margin-right: 5%; text-align: right ">
+
+                            <!-- <label class="form-check-label" for="exampleCheck1">שולחן</label>
+                            <input  id="tableId" type="checkbox" class="form-check-input"/> -->
+                            <label class="container2">שולחן
+                                <input  id="tableId"  type="checkbox" >
+                                <span class="checkmark"></span>
+                              </label>
+
+                            <!-- <label class="form-check-label" for="exampleCheck1">מזגן</label>
+                            <input id="ACID" type="checkbox" class="form-check-input" /> -->
+                            <label class="container2">מזגן
+                                <input id="ACID" type="checkbox" >
+                                <span class="checkmark"></span>
+                              </label>
+
+                            <!-- <label class="form-check-label" for="exampleCheck1">מיטה</label>
+                            <input id="bedId" type="checkbox" class="form-check-input" /> -->
+                            <label class="container2">מיטה
+                                <input id="bedId" type="checkbox" >
+                                <span class="checkmark"></span>
+                              </label>
+
+                            <!-- <label class="form-check-label" for="exampleCheck1">ארון בגדים </label>   
+                            <input id="closetId" type="checkbox" class="form-check-input" /> -->
+                            <label class="container2">ארון בגדים
+                                <input id="closetId" type="checkbox" >
+                                <span class="checkmark"></span>
+                              </label>
+                    </div>
+                    <div style=" width: 12em;margin-top: 5%;">
+                        <h1 style="color:white; font-weight: 200">חדר שינה 1</h1> 
+                    </div> 
+                    <div style=" width:20px; margin-right: -15px; background-color: rgb(204, 101, 101)"></div>
+
+
+                </div>
+                <div class="col-sm-8" style="background-color: #F2F2F2; display: flex;">
+                        <div style="width: 18em; display: flex">
+                                <div style="width: 7.5em; margin-right: 7%; text-align: right; margin-top: 16px;"> <!--margin-top: 5%-->
+                                    <!-- <label class="form-check-label3" for="exampleCheck1">
+                                        ממ"ד/מקלט
+                                    </label>
+                                    <input type="checkbox" class="form-check-input" id="saferoomId"/> -->
+                                    
+                                    <label class="container2" style="color:black">ממ"ד/מקלט
+                                        <input type="checkbox" id="saferoomId">
+                                        <span class="checkmark"  style="border: 1px solid grey"></span>
+                                      </label>
+
+                                    <!-- <label class="form-check-label3" for="exampleCheck1">מקרר</label>
+                                    <input type="checkbox" class="form-check-input" id="fridgeId"/> -->
+                                    <label class="container2" style="color:black">מקרר
+                                            <input type="checkbox" id="fridgeId">
+                                            <span class="checkmark"  style="border: 1px solid grey"></span>
+                                          </label>
+                                    <!-- <label class="form-check-label3" for="exampleCheck1">תנור</label>
+                                    <input type="checkbox" class="form-check-input" id="ovenId"/> -->
+                                    <label class="container2" style="color:black">תנור
+                                            <input type="checkbox" id="ovenId">
+                                            <span class="checkmark" style="border: 1px solid grey"></span>
+                                          </label>
+                                    <!-- <label class="form-check-label3" for="exampleCheck1">גז בישול</label>   
+                                    <input type="checkbox" class="form-check-input" id="gasId"/> -->
+                                    <label class="container2" style="color:black">גז בישול
+                                            <input type="checkbox" id="gasId">
+                                            <span class="checkmark"  style="border: 1px solid grey"></span>
+                                          </label>
+                                </div>
+
+                                <div style="width: 7em; text-align: right;margin-top: 16px;">
+                                        <!-- <label class="form-check-label3" for="exampleCheck1">מחסן</label>
+                                        <input type="checkbox" class="form-check-input checkGreySolidBorder" id="garageId"/> -->
+                                        <label class="container2" style="color:black">מחסן
+                                                <input type="checkbox" id="garageId">
+                                                <span class="checkmark"  style="border: 1px solid grey"></span>
+                                              </label>
+                                        <!-- <label class="form-check-label3" for="exampleCheck1">חניה</label>
+                                        <input type="checkbox" class="form-check-input" id="parkingId"/> -->
+                                        <label class="container2" style="color:black">חניה
+                                            <input type="checkbox" id="parkingId">
+                                                <span class="checkmark"  style="border: 1px solid grey"></span>
+                                              </label>
+                                        <!-- <label class="form-check-label3" for="exampleCheck1">משופצת</label>
+                                        <input type="checkbox" class="form-check-input" id="renovatedId"/> -->
+                                        <label class="container2" style="color:black">משופצת
+                                                <input type="checkbox" id="renovatedId">
+                                                <span class="checkmark"  style="border: 1px solid grey"></span>
+                                              </label>
+                                        <!-- <label class="form-check-label3" for="exampleCheck1">מעלית</label>   
+                                        <input type="checkbox" class="form-check-input" id="elevatorId"/> -->
+                                        <label class="container2" style="color:black">מעלית
+                                                <input type="checkbox" id="elevatorId">
+                                                <span class="checkmark"  style="border: 1px solid grey"></span>
+                                              </label>
+                                    </div>
+    
+                        </div>
+                        
+                        <div style="width: 10em;">
+                            <h1 style="margin-top:9% ;font-weight: 200;  border-left: 1.5px solid grey;">פרטי הנכס</h1> 
+                        </div> 
+                </div>
+            </div>
+            <hr style="opacity: 0;">
+
+            <div class="row">
+                <div class="alert alert-light" style=" "><!-- free text section --> 
+                        <div class="row">
+                            <div class='col-sm-8' >
+        
+                                <textarea rows="3" cols="55" style="border: 2px solid grey" placeholder="?פספסנו משהו"></textarea>
+                                
+                            </div>
+                            <div class='col-sm-3' >
+                                    <h2 style="font-weight: 100; color:black">טקסט 
+                                        <span style="font-weight:400">חופשי</span></h2>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row" style="">
+                    <div class="row">
+                        <div class="col-sm-4" style="border: 25px; display: flex;
+                        flex-direction: column;
+                        flex-wrap: wrap; ; ">                            
+                           <div class="alert" style="width: 17em; background-color: #69E7C8">
+                                <h3 style="font-weight: 400; color:white">תמונות נוספות</h3> 
+                                <button id="extraPics1ID" class="btn btn-light" style="width:100%">
+                                    <span style="font-weight:700;font-size: 140%">+ </span>
+                                    בחר תמונה</button> <hr style="opacity: 0;">   
+                                <button id="extraPics2ID" class="btn btn-light" style="width:100%">
+                                    <span style="font-weight:700;font-size: 140%">+ </span>בחר תמונה
+                                </button>   <hr style="opacity: 0;">  
+                                <button id="extraPics3ID" class="btn btn-light" style="width:100%">
+                                    <span style="font-weight:700;font-size: 140%">+ </span>
+                                    בחר תמונה</button>    
+                            </div>
+                        </div>
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-7" style="border: 25px; ">
+                            <div class="alert" style="width: 27em; background-color: #ff8f8f">
+                                <h3 style="font-weight: 400; color:white">תמונות לחדר שינה 1</h3>
+                                <button id="room1Pics1ID" class="btn btn-light" style="width:47%">
+                                    <span style="font-weight:700;font-size: 140%">+ </span>בחר תמונה</button> 
+                                <button id="room1Pics2ID" class="btn btn-light" style="width:47%">
+                                    <span style="font-weight:700;font-size: 140%">+ </span>בחר תמונה</button>
+                                
+                            </div>
+                            <a href="./pictureAngles.html"  style="text-decoration:none; color:grey" >?איך לצלם תמונה טובה</a>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="">
+                    <label data-toggle="tooltip" dir='rtl' title="החברה לא תהיה אחראית לכל נזק, הפסד או הוצאה מכל מין וסוג שייגרמו לגולש כלשהו המשתמש בשירות הנל ו/או למי מטעמו, במישרין או בעקיפין, בקשר לשירות ו/או אי דיוק או אי שלמות השירות. בהתאם, לא תהיה לך כל טענה, תביעה או דרישה כלפי החברה בגין שירות כונס הנכסים ו/או כונס הרכב. אין באמור לעיל כדי לגרוע מיתר הוראות תקנון השימוש, בין היתר לעניין העדר או הגבלת אחריות" 
+                      id="termsHoverId" >
+                      <span style="color:black; font-weight:bold">אני מסכים 
+                        <span style="text-decoration: underline">לתנאי שימוש
+                            </span>.
+                        </span>
+                    </label>
+                    <input id="agreementID" type="checkbox" class="" id="exampleCheck1" style="margin-right: 2%"/>
+                  </div>
+            <button id="submitFormID" dir="rtl" type="submit" class="btn btn-dark"
+             style="width:20em; background-color: #525252" onclick="submitForm()">סיום!</button>
+            <p style="color:red">!יש לשים לב כי חובה להעלות 2 תמונות לכל חדר שינה</p>
+            
+            <p style="float:right; font-size: 70%">  הזכויות שמורות 2018</p>
+        </div><!-- CONTAINER  -->
+    </div><!-- MAIN -->
+
+    <!-- scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
+    <script src="script.js"></script>
+    <script src="submitApartmentForm.js"></script>
+
+</body>
+</html>

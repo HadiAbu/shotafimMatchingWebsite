@@ -1,0 +1,64 @@
+
+.downArrow{
+    /* width: 50px; */
+    height: 50px;
+    /* background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Mytikas_from_Skala.jpg/220px-Mytikas_from_Skala.jpg'); */
+    position :relative;
+    -webkit-animation: mymove 3s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 3s infinite;
+}
+.FadeMessage{
+    -webkit-animation: fadeIn 2s forwards; /* Safari 4.0 - 8.0 */
+    animation: fadeIn 2s forwards;
+}
+@keyframes fadeIn{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+@keyframes mymove {
+    0% {top: 0px; }
+    50% {top: 10px;}
+    100% {top: 0px}
+}
+
+.container{
+   /* margin-right: 9em; */
+   text-align: center;
+}
+.fade {
+    opacity: 0;
+  }
+.button {
+    background-color: #ff7d7d; /* Green */
+    border: none;
+    color: white;
+    padding: 0px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+}
+.bold600{
+    font-weight:600 ;
+    /* padding-bottom: 60px; */
+
+}
+.button:hover{
+    color:white;
+}
+.vlsmall {
+    border-color:black;
+    width:50px; 
+    transform:rotate(110deg)
+}
+.vl2 {
+    border-left: 1px solid #414141;
+    height: 500px;
+    position: inherit;
+    /* left: 50%; */
+    margin-left: -3px;
+    margin-top: -30px;
+    /* top: -30%; */
+    transform: rotate(20deg);
+}

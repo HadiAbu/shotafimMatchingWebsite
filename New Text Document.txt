@@ -1,0 +1,3 @@
+1. Making sure all data is selected
+2. building REST API
+3. 
